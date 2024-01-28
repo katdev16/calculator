@@ -61,15 +61,18 @@ function appendToScreen(value) {
     function evaluateExpression() {
         const expression = list.join("");
         try {
-            const result = new Function("return " + expression)();
+            var result = new Function("return " + expression)();
             screen.textContent = result;
         } catch (error) {
             console.error("Invalid expression:", expression);
         }
         list.length = 0; // Clear the list after evaluation
+        
+        list.push(result)
+        console.log(list)
     }
 
-
+debugger;
         
 
 
